@@ -68,9 +68,7 @@ app.delete('/todos/:id',(req,res)=>{
     });
 });
 
-app.listen(port,()=>{
-    console.log(`Started up on port ${port}`);
-});
+
 
 app.patch('/todos/:id',(req,res)=>{
     var id=req.params.id;
@@ -93,9 +91,16 @@ app.patch('/todos/:id',(req,res)=>{
             return res.status(404).send();
         }
 
-        res.send({todo});
+        res.status(200).send({todo});
     }).catch((e)=>{
         res.status(400).send();
-    })
+    });
+});
+app.listen(port,()=>{
+    console.log(`Started up on port ${port}`);
 });
 module.exports={app};
+
+
+
+
