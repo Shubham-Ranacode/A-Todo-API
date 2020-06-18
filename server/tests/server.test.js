@@ -172,7 +172,7 @@ describe('DELETE/todos/:id',()=>{
         .delete(`/todos/${hexId}`)
         .set('x-auth',users[1].tokens[0].token)
         .expect(401)
-        .end(done);
+        .end(done); 
     });
 
     it('should return 404 if object id is invalid',(done)=>{
